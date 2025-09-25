@@ -1,0 +1,157 @@
+@use "globals" as *;
+
+// Header Component
+header {
+  background-color: $white;
+  border-bottom: 2px solid $red-cross-red;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  // Header container layout
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+
+  // Logo image - directly inside header
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+  }
+
+  // Header title
+  h1 {
+    font-family: $information-font;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $red-cross-red;
+    margin: 0 7rem 0 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  // Navigation
+  nav {
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 2rem;
+      align-items: center;
+
+      li {
+        position: relative;
+
+        a {
+          font-family: $information-font;
+          font-size: 1rem;
+          font-weight: 500;
+          color: $black;
+          text-decoration: none;
+          padding: 0.75rem 1rem;
+          border-radius: 4px;
+          transition: all 0.3s ease;
+          display: block;
+
+          &:hover {
+            background-color: $light-gray;
+            color: $red-cross-red;
+            transform: translateY(-2px);
+          }
+
+          &:focus {
+            outline: 2px solid $classic-blue;
+            outline-offset: 2px;
+          }
+
+          // Special styling for "Få hjælp" (Get Help)
+          &[href*="hjælp"],
+          &[href*="help"] {
+            background-color: $red-cross-red;
+            color: $white;
+            font-weight: 600;
+
+            &:hover {
+              background-color: darken($red-cross-red, 10%);
+              color: $white;
+              transform: translateY(-2px);
+            }
+          }
+
+          // Special styling for "Donér" (Donate)
+          &[href*="donér"],
+          &[href*="donate"] {
+            color: $red-cross-red;
+            font-weight: 600;
+            border: 2px solid $red-cross-red;
+
+            &:hover {
+              background-color: $red-cross-red;
+              color: $white;
+            }
+          }
+        }
+
+        // Dropdown indicator for potential submenus
+        &.has-dropdown {
+          &::after {
+            content: "▼";
+            font-size: 0.75rem;
+            color: $medium-gray;
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  // Utility section (could contain search, language selector, etc.)
+  .header-utilities {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .search-button {
+      background: none;
+      border: 2px solid $medium-gray;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: $red-cross-red;
+        background-color: $red-cross-red;
+        color: $white;
+      }
+
+      &::before {
+        content: "🔍";
+        font-size: 1rem;
+      }
+    }
+
+    .language-selector {
+      font-family: $information-font;
+      font-size: 0.9rem;
+      color: $pms-cool-gray-11;
+      padding: 0.5rem;
+      border: 1px solid $medium-gray;
+      border-radius: 4px;
+      background-color: $white;
+      cursor: pointer;
+
+      &:hover {
+        border-color: $red-cross-red;
+        color: $red-cross-red;
+      }
+    }
+  }
+}

@@ -1,1 +1,290 @@
-/*# sourceMappingURL=main.css.map */
+@charset "UTF-8";
+/* CSS Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove default button styles */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove default styling from form elements */
+input,
+textarea,
+select {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+/* Remove default table styling */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove default fieldset styling */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default legend styling */
+legend {
+  padding: 0;
+}
+
+/* Remove default address styling */
+address {
+  font-style: normal;
+}
+
+/* Remove default cite styling */
+cite {
+  font-style: normal;
+}
+
+/* Remove default code styling */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Remove default small styling */
+small {
+  font-size: 80%;
+}
+
+/* Prevent sub and sup from affecting line height */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Remove default hr styling */
+hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 1em 0;
+}
+
+/* Remove animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+header {
+  background-color: #ffffff;
+  border-bottom: 2px solid #ed1b2e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+}
+header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+}
+header h1 {
+  font-family: Akzidenz-Grotesk, helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ed1b2e;
+  margin: 0 7rem 0 1rem;
+  letter-spacing: -0.02em;
+}
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  align-items: center;
+}
+header nav ul li {
+  position: relative;
+}
+header nav ul li a {
+  font-family: Akzidenz-Grotesk, helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: block;
+}
+header nav ul li a:hover {
+  background-color: #d7d7d8;
+  color: #ed1b2e;
+  transform: translateY(-2px);
+}
+header nav ul li a:focus {
+  outline: 2px solid #0091cd;
+  outline-offset: 2px;
+}
+header nav ul li a[href*=hjælp], header nav ul li a[href*=help] {
+  background-color: #ed1b2e;
+  color: #ffffff;
+  font-weight: 600;
+}
+header nav ul li a[href*=hjælp]:hover, header nav ul li a[href*=help]:hover {
+  background-color: rgb(197.4146341463, 15.5853658537, 32.0365853659);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+header nav ul li a[href*=donér], header nav ul li a[href*=donate] {
+  color: #ed1b2e;
+  font-weight: 600;
+  border: 2px solid #ed1b2e;
+}
+header nav ul li a[href*=donér]:hover, header nav ul li a[href*=donate]:hover {
+  background-color: #ed1b2e;
+  color: #ffffff;
+}
+header nav ul li.has-dropdown::after {
+  content: "▼";
+  font-size: 0.75rem;
+  color: #9f9fa3;
+  margin-left: 0.5rem;
+}
+header .header-utilities {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+header .header-utilities .search-button {
+  background: none;
+  border: 2px solid #9f9fa3;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+header .header-utilities .search-button:hover {
+  border-color: #ed1b2e;
+  background-color: #ed1b2e;
+  color: #ffffff;
+}
+header .header-utilities .search-button::before {
+  content: "🔍";
+  font-size: 1rem;
+}
+header .header-utilities .language-selector {
+  font-family: Akzidenz-Grotesk, helvetica, sans-serif;
+  font-size: 0.9rem;
+  color: #6d6e70;
+  padding: 0.5rem;
+  border: 1px solid #9f9fa3;
+  border-radius: 4px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+header .header-utilities .language-selector:hover {
+  border-color: #ed1b2e;
+  color: #ed1b2e;
+}
+
+body {
+  font-family: Akzidenz-Grotesk, helvetica, sans-serif;
+  color: #000000;
+  background-color: #ffffff;
+  line-height: 1.6;
+}/*# sourceMappingURL=main.css.map */
